@@ -34,7 +34,7 @@
 
                         $fromEmail = "no-reply@" . ($_SERVER["HTTP_HOST"] ??  "example.com");
                         $headers = "From: " . mb_encode_mimeheader("システム自動送信") . "<" . $fromEmail . ">\r\n";
-                        $headers = "Reply-To:" . mb_encode_mimeheader($data["name"]) . "<" . $data["email"] . ">\r\n"
+                        $headers = "Reply-To:" . mb_encode_mimeheader($data["name"]) . "<" . $data["email"] . ">\r\n";
 
                         if (mb_send_mail($to,$subject,$body,$headers)){
                             $response["success"] = true; //JS側に成功を伝える    
@@ -71,8 +71,8 @@
                             <h1>お問い合わせフォーム - 送信完了画面</h1>
                         </header>
                         <main>    
-                            <p><?php $text = "お問い合わせが送信されました。ありがとうございます!";
-                            echo $text;
+                            <p><?php 
+                            echo "お問い合わせが送信されました。ありがとうございます!";
                             ?> 
                             </p>
                         <ul>
