@@ -1,0 +1,8 @@
+services:
+  php-server:
+    image: php:8.2-apache
+    container_name: step6-test
+    ports:
+      - "8090:80"
+    volumes:
+      - ./step6-test:/var/www/html
